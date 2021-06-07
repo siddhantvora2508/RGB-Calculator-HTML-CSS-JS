@@ -1,0 +1,102 @@
+<html lang="eng" dir="ltr">
+<head>
+
+<meta charset="utf-8">
+<title>RGB Calculator</title>
+<style media="screen">
+
+
+body{
+    margin:0 ; padding:0 ;
+    box-sizing: border-box;
+    display:grid;
+    place-items: center;
+    height:100vh;
+}
+
+.main{
+    height:400px;
+    width:250px;
+    background:#333;
+    border-radius:10px;
+    display:grid;
+    place-items: center;
+    color:#fff;
+    font-family:verdena;
+}
+
+#box{
+    height:40px;
+    width:80%;
+    border:none;
+    outline:none;
+    border-radius: 50px;
+    text-align: center;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    height:10px;
+    width:80%;
+    border-radius: 50px;
+    outline:none;
+}
+
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height:25px;
+    width:25px;
+    background:#fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.main #red{
+    background: linear-gradient(90deg, #000, Red);
+}
+
+
+.main #green{
+    background: linear-gradient(90deg, #000, green);
+}
+
+.main #blue{
+    background: linear-gradient(90deg, #000, blue);
+}
+
+
+</style>
+</head>
+<body>
+
+<div class= "main">
+Result: <input type="text" id="box" value="rgb(255,255,255)">
+
+Red: <input type="range" id="red" value="255" min="0" max="255">
+
+
+Green: <input type="range" id="green" value="255" min="0" max="255">
+
+Blue: <input type="range" id="blue" value="255" min="0" max="255">
+
+<script type="text/javascript">
+    function myColor(){
+        var red =document.getElementById('red').value;
+        var green =document.getElementById('green').value;
+        var blue =document.getElementById('blue').value;
+        var color = 'rgb('+ red +','+ green +', '+ blue +')';
+        document.body.style.backgroundColor = color;
+        document.getElementById('box').value = color;
+    }
+
+    document.getElementById('red').addEventListener('input' ,myColor);
+    document.getElementById('green').addEventListener('input' ,myColor);
+    document.getElementById('blue').addEventListener('input' ,myColor);
+
+</script>
+
+
+</div>
+</body>
+</html>
